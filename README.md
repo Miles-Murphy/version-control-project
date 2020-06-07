@@ -25,3 +25,13 @@ pip install pandas
 python bikeshare.py
 
 From there simply follow the input prompts.
+
+##Files Included
+
+In addition to the bikeshare.py program, you will also find the following csv datafiles:
+
+    - new_york_city.csv
+    - chicago.csv
+    - washington.csv
+
+Without these files there is no data for this program to use!
