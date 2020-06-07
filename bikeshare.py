@@ -19,7 +19,16 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               #Town aliases and nicknames added for the creative user input
 
 def say_hello():
-    #Say hello to the user and ask if they would like to run the program!
+    """This functions says hello to the user and ask if they would like to run the program!
+
+    Arguments:
+    User Input - The user is asked to answer yes or no
+    No response but yes or no (.lower used to avoid case sensitivity) is accepted.
+    The input request is reapeated until acceptable input is provided or keyboard interrupt is utilized
+
+    Returns:
+    (str) start - a lowercase string of 'yes' or 'no'
+    """
     print('\nHello! Let\'s explore some US bikeshare data!')
     print('\nWould you like to explore some bikeshare data?')
 
@@ -35,6 +44,9 @@ def say_hello():
 def get_filters(start):
     """
     Asks user to specify a city, month, and day to analyze.
+
+    Arguments:
+        (str) start - tells the program to continue running (if 'yes') or stop (if 'no')
 
     Returns:
         (str) city - name of the city to analyze
