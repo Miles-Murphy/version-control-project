@@ -311,7 +311,7 @@ def main():
             break
             #Ends the program without an error and says thanks the user!
 
-           """Websites such as Stackoverflow, Udacity Forums, Python Libraries, and other reference/discussion forums were used to trouble shoot problems, but no solutions were copied verbatim. All of this code was provided by Udacity at the start of the project or written by me with a lot of trial and error (generally after hours of reading about similar solutions or new techniques and adapting them to my line of thinking). Nothing was intentionally copied."""
+"""Websites such as Stackoverflow, Udacity Forums, Python Libraries, and other reference/discussion forums were used to troubleshoot problems, but no solutions were copied verbatim. All of this code was provided by Udacity at the start of the project or written by me with a lot of trial and error (generally after hours of reading about similar solutions or new techniques and adapting them to my line of thinking). Nothing was intentionally copied."""
 
 if __name__ == "__main__":
 	main()
