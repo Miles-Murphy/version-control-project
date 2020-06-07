@@ -298,13 +298,13 @@ def main():
 
         yes_or_no = ('yes', 'no')
         while True:
-            restart = input('\nWould you like to restart? Enter yes or no.\n')
+            restart = input('\nWould you like to restart? Enter yes or no.\n').lower()
 
             if restart not in yes_or_no:
                 print('\nSorry, that is not an acceptable response. Please try again')
             else:
                 break
-        if restart.lower() != 'yes':
+        if restart != 'yes':
             print('\nThanks for looking at bikeshare data with me today!')
             break
             #Ends the program without an error and says thanks the user!
