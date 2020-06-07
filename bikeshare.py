@@ -112,8 +112,8 @@ def load_data(city, month, day):
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
-        for month, january = 1
-        for day, monday = 0
+            for month, january = 1
+            for day, monday = 0
     """
      # load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
@@ -191,7 +191,15 @@ def time_stats(df, month, day):
 
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
+    """Displays statistics on the most popular stations and trip.
+
+    Arguments:
+        (df) - data filtered by user selection of which city and what month(s)/day(s) to examine
+
+    Returns:
+        (str) - prints a string formatted to display the most popular starting station, the most popular ending station, and the most popular start/end combination based on the user input
+
+    """
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
