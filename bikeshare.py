@@ -24,12 +24,10 @@ def say_hello():
     print('\nWould you like to explore some bikeshare data?')
 
     yes_or_no = ('yes', 'no')
-    while True:
+    start = input('\nPlease enter "yes" or "no": \n').lower()
+    while start not in yes_or_no:
+        print('\nSorry, that is not an acceptable response. Please try again')
         start = input('\nPlease enter "yes" or "no": \n').lower()
-        if start not in yes_or_no:
-            print('\nSorry, that is not an acceptable response. Please try again')
-        else:
-            break
     return start
 
 def get_filters(start):
