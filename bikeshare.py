@@ -83,7 +83,7 @@ def get_filters(start):
             print('-'*40)
             return city, month, day
         else:
-            print('\nSorry you do not want to explore any data! Have a nice day!')
+
             break
 
 
@@ -284,6 +284,7 @@ def main():
     while True:
         start = say_hello()
         if start != 'yes':
+            print('\nSorry you do not want to explore any data! Have a nice day!')
             break
             #Ends program incase the user changed their mind!
         city, month, day = get_filters(start)
