@@ -295,7 +295,15 @@ def user_stats(df, city, month, day):
         print("Sorry, there are no gender or DOB statistics for {}'s bikeshare program!".format(city.title()))
 
 def display_results_5(df):
-    """Provides user data 5 users at a time until no more data is requested"""
+    """Provides user data 5 users at a time until no more data is requested
+
+    Arguments:
+        (df) - data filtered by user selection of which city and what month(s)/day(s) to examine
+
+    Returns:
+        prints 5 lines of a the df at a time based on user input
+
+    """
 
     print('\nPrinting User Info...\n')
     start_time = time.time()
