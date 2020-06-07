@@ -221,7 +221,17 @@ def station_stats(df):
 
 
 def trip_duration_stats(df):
-    """Displays statistics on the total and average trip duration."""
+    """Displays statistics on the total and average trip duration.
+
+    Arguments:
+        (df) - data filtered by user selection of which city and what month(s)/day(s) to examine
+
+    Returns:
+        (str) - prints a string formatted to display the total time traveled and the average trip duration during the user selected month/day.
+
+        The total travel time and average travel time were converted into more accessible data.
+
+    """
 
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
@@ -343,7 +353,7 @@ def main():
             break
             #Ends the program without an error and says thanks the user!
 
-           """Websites such as Stackoverflow, Udacity Forums, Python Libraries, and other reference/discussion forums were used to trouble shoot problems, but no solutions were copied verbatim. All of this code was provided by Udacity at the start of the project or written by me with a lot of trial and error (generally after hours of reading about similar solutions or new techniques and adapting them to my line of thinking). Nothing was intentionally copied."""
+"""Websites such as Stackoverflow, Udacity Forums, Python Libraries, and other reference/discussion forums were used to trouble shoot problems, but no solutions were copied verbatim. All of this code was provided by Udacity at the start of the project or written by me with a lot of trial and error (generally after hours of reading about similar solutions or new techniques and adapting them to my line of thinking). Nothing was intentionally copied."""
 
 if __name__ == "__main__":
 	main()
