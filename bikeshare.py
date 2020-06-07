@@ -147,8 +147,18 @@ def load_data(city, month, day):
 
 
 def time_stats(df, month, day):
-    """Displays statistics on the most frequent times of travel."""
+    """Displays statistics on the most frequent times of travel.
 
+    Finds the mode of the month and/or day input, calculates data related to the ride starting hour, converts the start time data to a more easily read datatype, and prints the appropriate string based on user input.
+
+    Arguments:
+        df - data filtered by user selection of which city and what month(s)/day(s) to examine
+        (int) month - integer which represents the month selected if input was not 'all' months
+        (int) day - integer which represents the day selected if input was not 'all' days
+
+    Returns:
+        (str) - prints a string formatted to display the most popular month and most popular day (if a specific month/day was not selected) and provides the most common ride starting hour
+    """
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
