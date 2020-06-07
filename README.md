@@ -35,3 +35,7 @@ In addition to the bikeshare.py program, you will also find the following csv da
     - washington.csv
 
 Without these files there is no data for this program to use!
+
+##Credits
+
+This program was written using a Udacity outline for the bikeshare project, but many different resources were used in the trial and error process of creating a fully functioning program. This Stackoverflow discussion was particularly useful in creating the while expressions for user input (https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response)
