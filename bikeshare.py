@@ -157,7 +157,7 @@ def time_stats(df, month, day):
         (int) day - integer which represents the day selected if input was not 'all' days
 
     Returns:
-        (str) - prints a string formatted to display the most popular month and most popular day (if a specific month/day was not selected) and provides the most common ride starting hour
+        prints a string formatted to display the most popular month and most popular day (if a specific month/day was not selected) and provides the most common ride starting hour
     """
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
@@ -197,7 +197,7 @@ def station_stats(df):
         (df) - data filtered by user selection of which city and what month(s)/day(s) to examine
 
     Returns:
-        (str) - prints a string formatted to display the most popular starting station, the most popular ending station, and the most popular start/end combination based on the user input
+        prints a string formatted to display the most popular starting station, the most popular ending station, and the most popular start/end combination based on the user input
 
     """
 
@@ -227,7 +227,7 @@ def trip_duration_stats(df):
         (df) - data filtered by user selection of which city and what month(s)/day(s) to examine
 
     Returns:
-        (str) - prints a string formatted to display the total time traveled and the average trip duration during the user selected month/day.
+        prints a string formatted to display the total time traveled and the average trip duration during the user selected month/day.
 
         The total travel time and average travel time were converted into more accessible data.
 
@@ -248,7 +248,19 @@ def trip_duration_stats(df):
 
 
 def user_stats(df, city, month, day):
-    """Displays statistics on bikeshare users."""
+    """Displays statistics on bikeshare users.
+
+    Arguments:
+        (df) - data filtered by user selection of which city and what month(s)/day(s) to examine
+        (str) city - name of the city to analyze
+        (str) month - name of the month to filter by, or "all" to apply no month filter
+        (str) day - name of the day of week to filter by, or "all" to apply no day filter
+
+    Returns:
+        prints a statement provided the count of user types for all cities, gender statistic (if the city selected was not 'washington'), and some dob statistics (again, if the city selected was not 'washington')
+        - if user input was 'washington' the second part of the printed statement apologizes that 'washington' does not have gender nor dob data
+
+    """
 
     print('\nCalculating User Stats...\n')
     start_time = time.time()
