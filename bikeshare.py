@@ -33,12 +33,10 @@ def say_hello():
     print('\nWould you like to explore some bikeshare data?')
 
     yes_or_no = ('yes', 'no')
-    while True:
+    start = input('\nPlease enter "yes" or "no": \n').lower()
+    while start not in yes_or_no:
+        print('\nSorry, that is not an acceptable response. Please try again')
         start = input('\nPlease enter "yes" or "no": \n').lower()
-        if start not in yes_or_no:
-            print('\nSorry, that is not an acceptable response. Please try again')
-        else:
-            break
     return start
 
 def get_filters(start):
@@ -97,7 +95,7 @@ def get_filters(start):
             print('-'*40)
             return city, month, day
         else:
-            print('\nSorry you do not want to explore any data! Have a nice day!')
+
             break
 
 
@@ -348,6 +346,7 @@ def main():
     while True:
         start = say_hello()
         if start != 'yes':
+            print('\nSorry you do not want to explore any data! Have a nice day!')
             break
             #Ends program incase the user changed their mind!
         city, month, day = get_filters(start)
@@ -362,13 +361,13 @@ def main():
 
         yes_or_no = ('yes', 'no')
         while True:
-            restart = input('\nWould you like to restart? Enter yes or no.\n')
+            restart = input('\nWould you like to restart? Enter yes or no.\n').lower()
 
             if restart not in yes_or_no:
                 print('\nSorry, that is not an acceptable response. Please try again')
             else:
                 break
-        if restart.lower() != 'yes':
+        if restart != 'yes':
             print('\nThanks for looking at bikeshare data with me today!')
             break
             #Ends the program without an error and says thanks the user!
