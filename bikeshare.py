@@ -19,7 +19,16 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               #Town aliases and nicknames added for the creative user input
 
 def say_hello():
-    #Say hello to the user and ask if they would like to run the program!
+    """This functions says hello to the user and ask if they would like to run the program!
+
+    Arguments:
+    User Input - The user is asked to answer yes or no
+    No response but yes or no (.lower used to avoid case sensitivity) is accepted.
+    The input request is reapeated until acceptable input is provided or keyboard interrupt is utilized
+
+    Returns:
+    (str) start - a lowercase string of 'yes' or 'no'
+    """
     print('\nHello! Let\'s explore some US bikeshare data!')
     print('\nWould you like to explore some bikeshare data?')
 
@@ -35,6 +44,9 @@ def say_hello():
 def get_filters(start):
     """
     Asks user to specify a city, month, and day to analyze.
+
+    Arguments:
+        (str) start - tells the program to continue running (if 'yes') or stop (if 'no')
 
     Returns:
         (str) city - name of the city to analyze
@@ -100,6 +112,8 @@ def load_data(city, month, day):
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
+            for month, january = 1
+            for day, monday = 0
     """
      # load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
@@ -133,8 +147,18 @@ def load_data(city, month, day):
 
 
 def time_stats(df, month, day):
-    """Displays statistics on the most frequent times of travel."""
+    """Displays statistics on the most frequent times of travel.
 
+    Finds the mode of the month and/or day input, calculates data related to the ride starting hour, converts the start time data to a more easily read datatype, and prints the appropriate string based on user input.
+
+    Arguments:
+        df - data filtered by user selection of which city and what month(s)/day(s) to examine
+        (int) month - integer which represents the month selected if input was not 'all' months
+        (int) day - integer which represents the day selected if input was not 'all' days
+
+    Returns:
+        prints a string formatted to display the most popular month and most popular day (if a specific month/day was not selected) and provides the most common ride starting hour
+    """
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
@@ -167,7 +191,15 @@ def time_stats(df, month, day):
 
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
+    """Displays statistics on the most popular stations and trip.
+
+    Arguments:
+        (df) - data filtered by user selection of which city and what month(s)/day(s) to examine
+
+    Returns:
+        prints a string formatted to display the most popular starting station, the most popular ending station, and the most popular start/end combination based on the user input
+
+    """
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
@@ -189,7 +221,17 @@ def station_stats(df):
 
 
 def trip_duration_stats(df):
-    """Displays statistics on the total and average trip duration."""
+    """Displays statistics on the total and average trip duration.
+
+    Arguments:
+        (df) - data filtered by user selection of which city and what month(s)/day(s) to examine
+
+    Returns:
+        prints a string formatted to display the total time traveled and the average trip duration during the user selected month/day.
+
+        The total travel time and average travel time were converted into more accessible data.
+
+    """
 
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
@@ -206,7 +248,19 @@ def trip_duration_stats(df):
 
 
 def user_stats(df, city, month, day):
-    """Displays statistics on bikeshare users."""
+    """Displays statistics on bikeshare users.
+
+    Arguments:
+        (df) - data filtered by user selection of which city and what month(s)/day(s) to examine
+        (str) city - name of the city to analyze
+        (str) month - name of the month to filter by, or "all" to apply no month filter
+        (str) day - name of the day of week to filter by, or "all" to apply no day filter
+
+    Returns:
+        prints a statement provided the count of user types for all cities, gender statistic (if the city selected was not 'washington'), and some dob statistics (again, if the city selected was not 'washington')
+        - if user input was 'washington' the second part of the printed statement apologizes that 'washington' does not have gender nor dob data
+
+    """
 
     print('\nCalculating User Stats...\n')
     start_time = time.time()
@@ -241,7 +295,15 @@ def user_stats(df, city, month, day):
         print("Sorry, there are no gender or DOB statistics for {}'s bikeshare program!".format(city.title()))
 
 def display_results_5(df):
-    """Provides user data 5 users at a time until no more data is requested"""
+    """Provides user data 5 users at a time until no more data is requested
+
+    Arguments:
+        (df) - data filtered by user selection of which city and what month(s)/day(s) to examine
+
+    Returns:
+        prints 5 lines of a the df at a time based on user input
+
+    """
 
     print('\nPrinting User Info...\n')
     start_time = time.time()
@@ -311,7 +373,7 @@ def main():
             break
             #Ends the program without an error and says thanks the user!
 
-"""Websites such as Stackoverflow, Udacity Forums, Python Libraries, and other reference/discussion forums were used to troubleshoot problems, but no solutions were copied verbatim. All of this code was provided by Udacity at the start of the project or written by me with a lot of trial and error (generally after hours of reading about similar solutions or new techniques and adapting them to my line of thinking). Nothing was intentionally copied."""
+"""Websites such as Stackoverflow, Udacity Forums, Python Libraries, and other reference/discussion forums were used to trouble shoot problems, but no solutions were copied verbatim. All of this code was provided by Udacity at the start of the project or written by me with a lot of trial and error (generally after hours of reading about similar solutions or new techniques and adapting them to my line of thinking). Nothing was intentionally copied."""
 
 if __name__ == "__main__":
 	main()
